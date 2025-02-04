@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\LeadController;
 use App\Http\Controllers\Api\PhaseController;
 use App\Http\Controllers\Api\WorkflowsController;
 use Illuminate\Http\Request;
@@ -19,6 +20,7 @@ Route::prefix('workflows')->group(function(){
     Route::put('/{id}',[WorkflowsController::class,'update']);
     Route::delete('/{id}',[WorkflowsController::class,'destroy']);
     });
+Route::post('/update-lead-status/{lead_id}/{workflow_id}',[LeadController::class, 'updateLeadStatus']);
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
