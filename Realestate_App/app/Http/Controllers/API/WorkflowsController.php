@@ -58,9 +58,8 @@ class WorkflowsController extends Controller
            
                 
             ]);
-           // event(new StudentEntryMadeSuccessfully($student));
             return response()->json([
-                'message' => 'Entry made successfully',
+                'message' => 'Workflow Created successfully',
                 'data' => new WorkflowsResource($Workflow)
             ],200);
     }
@@ -99,7 +98,7 @@ class WorkflowsController extends Controller
         
 
          return response()->json([
-            'message' => 'phase info updated successfully',
+            'message' => 'Workflow info updated successfully',
             'data' => new WorkflowsResource($id),
          ],200);
     }
@@ -108,7 +107,7 @@ class WorkflowsController extends Controller
     {
        if($id->delete()){ 
        return response()->json([
-        'message' => 'phase deleted successfully',
+        'message' => 'Workflow deleted successfully',
      ],200);
     }
     }
